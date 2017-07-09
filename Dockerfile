@@ -43,14 +43,7 @@ RUN set -ex \
 	&& rm python.tar.xz \
 	\
 	&& cd /usr/src/python \
-	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
 	&& ./configure \
-		--build="$gnuArch" \
-		--enable-loadable-sqlite-extensions \
-		--enable-shared \
-		--with-system-expat \
-		--with-system-ffi \
-		--without-ensurepip \
 	&& make -j "$(nproc)" \
 	&& make install \
 	&& ldconfig \
