@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install wget
 ENV GPG_KEY 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
 ENV PYTHON_VERSION 3.5.3
 
-# required for ./configure
+# required for compiling python
 RUN sudo apt-get install build-essential
 
 RUN set -ex \
